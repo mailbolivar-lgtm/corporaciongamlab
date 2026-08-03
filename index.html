@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corporación GAMLAB | Innovación e Industria Global</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Colores Principales extraídos del Logo GAMLAB */
+            --gamlab-blue: #0B2545;       /* Azul Marino Principal */
+            --gamlab-gray: #B0B8C1;       /* Gris Metálico Accent */
+            --gamlab-dark: #05101E;       /* Fondo Oscuro */
+            --gamlab-light: #F4F6F9;      /* Fondo Claro */
+            
+            /* Paleta de Colores por Área de Acción */
+            --color-alimentos: #2D6A4F;   /* Verde Industrial Nutricional */
+            --color-quimicos: #007A87;    /* Teal / Cyan Farmacéutico */
+            --color-software: #0052CC;    /* Azul Tech Digital */
+            --color-hardware: #1B3B6F;    /* Azul Acero Industrial */
+            --color-desarrollo: #8C5383;  /* Púrpura / Taupe Innovación */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        h1, h2, h3, h4, h5, .brand-title {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background-color: var(--gamlab-light);
+            color: #2D3748;
+            line-height: 1.6;
+        }
+
+        /* --- Navigation Bar --- */
+        header {
+            background-color: #ffffff;
+            border-bottom: 3px solid var(--gamlab-gray);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-container {
+            max-width: 1250px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 2rem;
+        }
+
+        .brand-logo-link {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+        }
+
+        /* LOGO PRINCIPAL GAMLAB EN HEADER */
+        .main-logo-img {
+            height: 55px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .brand-text h1 {
+            font-size: 1.35rem;
+            font-weight: 900;
+            color: var(--gamlab-blue);
+            letter-spacing: 0.5px;
+            line-height: 1.1;
+        }
+
+        .brand-text span {
+            font-size: 0.72rem;
+            color: var(--gamlab-gray);
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--gamlab-blue);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: #1d4ed8;
+        }
+
+        .btn-nav-contact {
+            background-color: var(--gamlab-blue);
+            color: #ffffff !important;
+            padding: 0.6rem 1.4rem;
+            border-radius: 4px;
+            transition: background-color 0.3s !important;
+        }
+
+        .btn-nav-contact:hover {
+            background-color: #17375e !important;
+        }
+
+        /* --- Hero Section --- */
+        .hero-section {
+            background: linear-gradient(135deg, var(--gamlab-blue) 0%, var(--gamlab-dark) 100%);
+            color: #ffffff;
+            padding: 5rem 2rem 6rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .hero-content h2 {
+            font-size: 2.6rem;
+            font-weight: 800;
+            margin-bottom: 1.2rem;
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            font-size: 1.15rem;
+            color: var(--gamlab-gray);
+            font-weight: 300;
+            margin-bottom: 2rem;
+        }
+
+        /* --- 5 Áreas de Acción --- */
+        .areas-section {
+            max-width: 1250px;
+            margin: -3.5rem auto 5rem;
+            padding: 0 1.5rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            background: #ffffff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .section-header h3 {
+            font-size: 1.8rem;
+            color: var(--gamlab-blue);
+            font-weight: 800;
+        }
+
+        .areas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .area-card {
+            background: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            border-top: 6px solid #ccc;
+        }
+
+        .area-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        /* Borde superior e identidad según Área */
+        .card-alimentos { border-color: var(--color-alimentos); }
+        .card-quimicos { border-color: var(--color-quimicos); }
+        .card-software { border-color: var(--color-software); }
+        .card-hardware { border-color: var(--color-hardware); }
+        .card-desarrollo { border-color: var(--color-desarrollo); }
+
+        .card-header {
+            padding: 2rem 1rem 1rem;
+            text-align: center;
+            background: #FAFAFA;
+            border-bottom: 1px solid #EFEFEF;
+        }
+
+        /* LOGOS DE CADA ÁREA EN LAS TARJETAS */
+        .area-logo-img {
+            height: 75px;
+            width: auto;
+            max-width: 100%;
+            object-fit: contain;
+            margin-bottom: 1rem;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .card-alimentos .card-title { color: var(--color-alimentos); }
+        .card-quimicos .card-title { color: var(--color-quimicos); }
+        .card-software .card-title { color: var(--color-software); }
+        .card-hardware .card-title { color: var(--color-hardware); }
+        .card-desarrollo .card-title { color: var(--color-desarrollo); }
+
+        .card-body {
+            padding: 1.5rem 1.2rem;
+            font-size: 0.9rem;
+            color: #555555;
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        /* --- Footer & Contacto --- */
+        .contact-section {
+            max-width: 800px;
+            margin: 0 auto 4rem;
+            background: #ffffff;
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            border-left: 6px solid var(--gamlab-blue);
+        }
+
+        .contact-section h3 {
+            color: var(--gamlab-blue);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.4rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--gamlab-blue);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #CBD5E1;
+            border-radius: 4px;
+            font-size: 0.95rem;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--gamlab-blue);
+        }
+
+        .btn-submit {
+            width: 100%;
+            background-color: var(--gamlab-blue);
+            color: #ffffff;
+            padding: 0.9rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn-submit:hover {
+            background-color: var(--gamlab-dark);
+        }
+
+        footer {
+            background: var(--gamlab-dark);
+            color: var(--gamlab-gray);
+            text-align: center;
+            padding: 2rem 1rem;
+            font-size: 0.85rem;
+            border-top: 1px solid #1E293B;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .hero-content h2 {
+                font-size: 1.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Principal -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="brand-logo-link">
+                <!-- AQUÍ CARGA EL LOGO QUE ENVIARAS: logo.png -->
+                <img src="logo.png" alt="Corporación GAMLAB Logo" class="main-logo-img">
+                <div class="brand-text">
+                    <h1>CORPORACIÓN GAMLAB</h1>
+                    <span>INNOVACIÓN INTEGRAL GLOBAL</span>
+                </div>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#divisiones">Áreas de Negocio</a></li>
+                <li><a href="#contacto" class="btn-nav-contact">Contacto</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero / Banner -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h2>Liderazgo Multidisciplinario para la Industria Global</h2>
+            <p>Integración de ciencia, tecnología, ingeniería y manufactura en 5 sectores estratégicos.</p>
+        </div>
+    </section>
+
+    <!-- Sección con las 5 Áreas de Negocio y sus Logos -->
+    <section class="areas-section" id="divisiones">
+        <div class="section-header">
+            <h3>Nuestras Áreas de Acción</h3>
+        </div>
+
+        <div class="areas-grid">
+
+            <!-- 1. Alimentos -->
+            <div class="area-card card-alimentos">
+                <div class="card-header">
+                    <!-- LOGO ÁREA 1 -->
+                    <img src="logo-alimentos.png" alt="Logo Productos de Alimentos" class="area-logo-img">
+                    <h4 class="card-title">Productos de Alimentos</h4>
+                </div>
+                <div class="card-body">
+                    Formulación, procesamiento y aseguramiento de calidad en la industria de alimentos y materias primas.
+                </div>
+            </div>
+
+            <!-- 2. Químicos y Medicamentos -->
+            <div class="area-card card-quimicos">
+                <div class="card-header">
+                    <!-- LOGO ÁREA 2 -->
+                    <img src="logo-quimicos.png" alt="Logo Productos Químicos y Medicamentos" class="area-logo-img">
+                    <h4 class="card-title">Químicos y Medicamentos</h4>
+                </div>
+                <div class="card-body">
+                    Desarrollo de compuestos químicos industriales y soluciones farmacológicas bajo norma internacional.
+                </div>
+            </div>
+
+            <!-- 3. Software -->
+            <div class="area-card card-software">
+                <div class="card-header">
+                    <!-- LOGO ÁREA 3 -->
+                    <img src="logo-software.png" alt="Logo Software" class="area-logo-img">
+                    <h4 class="card-title">Software</h4>
+                </div>
+                <div class="card-body">
+                    Sistemas a medida, arquitectura de datos, automatización de procesos y plataformas digitales escalables.
+                </div>
+            </div>
+
+            <!-- 4. Hardware y Equipos Industriales -->
+            <div class="area-card card-hardware">
+                <div class="card-header">
+                    <!-- LOGO ÁREA 4 -->
+                    <img src="logo-hardware.png" alt="Logo Hardware y Equipos Industriales" class="area-logo-img">
+                    <h4 class="card-title">Hardware y Equipos</h4>
+                </div>
+                <div class="card-body">
+                    Diseño, integración y suministro de maquinaria pesada, instrumental técnico y componentes electrónicos.
+                </div>
+            </div>
+
+            <!-- 5. Desarrollo de Productos -->
+            <div class="area-card card-desarrollo">
+                <div class="card-header">
+                    <!-- LOGO ÁREA 5 -->
+                    <img src="logo-desarrollo.png" alt="Logo Desarrollo de Productos" class="area-logo-img">
+                    <h4 class="card-title">Desarrollo de Productos</h4>
+                </div>
+                <div class="card-body">
+                    I+D aplicada, prototipado rápido y escalabilidad industrial desde la concepción hasta el producto final.
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Formulario de Contacto -->
+    <section class="contact-section" id="contacto">
+        <h3>Contacta con Corporación GAMLAB</h3>
+        <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Mensaje registrado correctamente.');">
+            <div class="form-group">
+                <label for="nombre">Nombre Completo</label>
+                <input type="text" id="nombre" class="form-control" placeholder="Ej. Roberto García" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Correo Electrónico</label>
+                <input type="email" id="email" class="form-control" placeholder="correo@empresa.com" required>
+            </div>
+            <div class="form-group">
+                <label for="area">Área de Interés</label>
+                <select id="area" class="form-control" required>
+                    <option value="">Seleccione una división...</option>
+                    <option value="alimentos">Productos de Alimentos</option>
+                    <option value="quimicos">Productos Químicos y Medicamentos</option>
+                    <option value="software">Software</option>
+                    <option value="hardware">Hardware y Equipos Industriales</option>
+                    <option value="desarrollo">Desarrollo de Productos</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="mensaje">Mensaje</label>
+                <textarea id="mensaje" class="form-control" rows="4" placeholder="Escriba su consulta comercial..." required></textarea>
+            </div>
+            <button type="submit" class="btn-submit">Enviar Requerimiento</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Corporación GAMLAB. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
